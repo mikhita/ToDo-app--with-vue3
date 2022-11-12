@@ -1,6 +1,6 @@
 :root {
-	--primary: #EA40A4;
-	--business: #3A82EE;
+	--primary: #FC7614;
+	--business: #5f6165;
 	--personal: var(--primary);
 	--light: #EEE;
 	--grey: #888;
@@ -31,6 +31,12 @@ input:not([type="radio"]):not([type="checkbox"]), button {
 body {
 	background: var(--light);
 	color: var(--dark);
+	text-align: center;
+	display: grid;
+	justify-content: center;
+}
+.app{
+	max-width: 600px;
 }
 
 section {
@@ -57,11 +63,15 @@ h4 {
 .greeting .title {
 	display: flex;
 }
+.greeting{
+	display: inline-flex;
+}
 
 .greeting .title input {
 	margin-left: 0.5rem;
 	flex: 1 1 0%;
 	min-width: 0;
+	max-width: 150px;
 }
 
 .greeting .title,
@@ -82,7 +92,9 @@ h4 {
 	box-shadow: var(--shadow);
 	margin-bottom: 1.5rem;
 }
-
+.create-todo h3{
+	color: #271a9c;
+}
 .create-todo .options {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -189,6 +201,7 @@ input:checked ~ .bubble::after {
 	cursor: pointer;
 }
 
+
 .todo-item .todo-content {
 	flex: 1 1 0%;
 }
@@ -196,6 +209,8 @@ input:checked ~ .bubble::after {
 .todo-item .todo-content input {
 	color: var(--dark);
 	font-size: 1.125rem;
+	max-width: 150px;
+
 }
 
 .todo-item .actions {
@@ -228,4 +243,15 @@ input:checked ~ .bubble::after {
 .todo-item.done .todo-content input {
 	text-decoration: line-through;
 	color: var(--grey);
+}
+
+@media only screen and (min-width: 420px){
+.greeting .title input {
+	
+	max-width: 200px;
+}
+
+.todo-content input{
+	max-width: 200px;
+}
 }
